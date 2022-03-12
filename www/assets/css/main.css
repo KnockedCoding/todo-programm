@@ -1,0 +1,114 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}  
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: url("https://wallpapercave.com/wp/wp2499245.jpg");
+}
+
+.list {
+    position: relative;
+    background: #fff;
+    width: 350px;
+}
+
+.list h2 {
+    background: linear-gradient(135deg, purple, blue);
+    color: white;
+    padding: 10px 20px;
+    font-weight: 600;
+}
+
+.list input {
+    width: 90%;
+    padding: 0.7rem 0;
+    color: black;
+}
+
+.list input::placeholder {
+    color: gray;
+    font-weight: 200;
+    
+}
+
+.list i {
+    padding-left: 5px;
+    cursor: pointer;
+    
+}
+
+.list ul {
+    position: relative;
+    padding: 20px;
+}
+
+.list ul li {
+    position: relative;
+    list-style: none;
+    padding: 15px 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.list ul li:last-child {
+    border-bottom: none;
+}
+
+.list ul li label {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+}
+
+.list ul li label input {
+    visibility: hidden;
+    appearance: none;
+}
+.list ul li label p {
+    position: absolute;
+}
+.list ul li label span {
+    position: relative;
+    width: 20px;
+    height: 20px;
+    border: 1px solid #ccc;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.list ul li label span::before {
+    content: '';
+    position: absolute;
+    top: 5px;
+    width: 10px;
+    height: 5px;
+    border-left: 2px solid #ccc;
+    border-bottom: 2px solid #ccc;
+    transform: rotate(-40deg);
+}
+
+.list ul li label input:checked ~ p {
+    text-decoration: line-through;
+    color: black;
+}
+
+.list ul li label input:checked ~ span {
+    background: #03a9f4;
+    border: 1px solid #03a9f4;
+}
+
+.list ul li label input:checked ~ span::before {
+    border-left: 2px solid cornsilk;
+    border-bottom: 2px solid cornsilk;
+}
+

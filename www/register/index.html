@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="../assets/js/jquery.min.js"></script>
+    <link rel="stylesheet" href="../assets/css/register.css">
+    <link rel="stylesheet" href="../assets/css/alerts.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css"
+        integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg=="
+        crossorigin="anonymous" />
+    <link rel="manifest" href="../manifest.json">
+    <title>Todo -> Register</title>
+</head>
+<body>
+    <div class="container">
+        <div class="center">
+            <p id="text">None</p>
+            <form method="post">
+                <div class="txt_field" aria-required="true">
+                    <input type="text" id="username" required>
+                    <span></span>
+                    <label>Benutzername</label>
+                </div>
+                <div class="txt_field">
+                    <input type="password" id="password" required>
+                    <span></span>
+                    <label>Passwort</label>
+                </div>
+                <div class="txt_field">
+                    <input type="password" id="password_return" required>
+                    <span></span>
+                    <label>Passwort wiederholen</label>
+                </div>
+
+                <div class="signup_link">
+                    Not a member? <a href="#">Signup</a>
+                  </div>
+                <button type="button" class="btn" onclick="createAccount();">Register</button>
+                
+            </form>
+        </div>
+    </div>
+
+    <script>
+        if(localStorage.getItem("token")) {
+            window.location.href = "/";
+        }
+        var text = document.getElementById("text");
+        
+        function createAccount() {
+            var username = document.getElementById("username").value;
+            var password = document.getElementById("password").value;
+            if(username == "" || username == null || password == null || password == "") {
+                text.textContent = "Bitte fülle alle Felder aus!"
+                return;
+            }
+            $.ajax({
+                method: "PUT",
+                url: "/api/create_user/",
+                dataType: "json",
+                data: JSON.stringify({
+                    username: username,
+                    password: password
+                }),
+                contentType: "application/json",
+                success: function(data) {
+                    if(data) {
+                        text.textContent = "Account erstellt"
+                    } else {
+                        text.textContent = "Dieser Benutzername wird schon benutzt. Bitte versuche es erneut!"
+                    } 
+                }
+            });
+            console.log(username);
+            console.log(document.getElementById("password").value);
+        }
+    </script>
+</body>
+</html>

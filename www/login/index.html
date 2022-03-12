@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=2.0">
+    <link rel="stylesheet" href="../assets/css/login.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css"
+        integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg=="
+        crossorigin="anonymous" />
+    <script src="../assets/js/jquery.min.js"></script>´
+    <link rel="manifest" href="../manifest.json">
+    <title>Todo -> Login</title>
+</head>
+<body>
+    <div class="container" id="cont">
+    </div>
+    <div class="center">
+        <input type="text" id="username" required placeholder="Your Username">
+        <input type="password" id="password" required placeholder="Your Password">
+        <div class="signup_link">
+            Not a member? <a href="#">Signup</a>
+            </div>
+        <button type="button" class="btn" onclick="login();">Login</button>
+            
+    </div>
+    <script>
+        if(localStorage.getItem("token")) {
+            window.location.href = "/";
+        }
+
+        function sleep(ms) {
+            return new Promise(resolve => setTimeout(resolve, ms));
+        }
+        
+        function login() {
+            var username = document.getElementById("username").value;
+            var password = document.getElementById("password").value;
+            var cont = $(".container");
+            if (username != null || password != null || username != "" || password != "" && !localStorage.getItem("token")) {
+               $.ajax({
+                    method: "POST",
+                    url: "/api/login/",
+                    data: JSON.stringify({
+                        username: username,
+                        password: password
+
+                    }),
+                    dataType: "json",
+                    contentType: "application/json",
+                    success: function(data) {
+                        if(data.includes("<div>")  || data.includes("danger") || data.includes("warning") || data.includes("primary")) {
+                            cont.append(data)
+                            return;
+                        } else {    
+                            cont.append(`
+                                        <link rel="stylesheet" href="../assets/css/alerts.css">
+                                        <div class="alert alert-success">
+                                            <span class="icon">
+                                                <i class="fa fa-close"></i>
+                                            </span>
+                                        
+                                            <div class="text">
+                                                <strong>Logged In</strong>
+                                                <p>Your are now logged in, here is the <a href="/">Todo Page</a></p>
+                                            </div>
+                                        
+                                            <button class="close">
+                                                <i class="fa fa-close"></i>
+                                            </button>
+                                        </div>
+                                        <script src="../assets/js/alerts.js">
+                            `)
+                            localStorage.setItem("token", data);
+                        }
+                    }
+               });
+            } else {
+                cont.append(`
+                                        <link rel="stylesheet" href="../assets/css/alerts.css">
+                                        <div class="alert alert-warning">
+                                            <span class="icon">
+                                                <i class="fa fa-exclamation-triangle"></i>
+                                            </span>
+                                        
+                                            <div class="text">
+                                                <strong>All fields requiered</strong>
+                                                <p>You need to fill out all Fields</p>
+                                            </div>
+                                        
+                                            <button class="close">
+                                                <i class="fa fa-close"></i>
+                                            </button>
+                                        </div>
+                                        <script src="../assets/js/alerts.js">
+                            `)
+            }
+
+        }
+
+        
+    
+    </script>
+</body>
+</html>

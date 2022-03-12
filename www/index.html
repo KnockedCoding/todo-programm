@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="assets/js/jquery.min.js"></script>
+    <link rel="stylesheet" href="assets/css/alerts.css">
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="manifest" href="manifest.json">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css"
+        integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg=="
+        crossorigin="anonymous" />
+    <title>Todo App</title>
+
+    <script>
+        if(localStorage.getItem("token")) {
+            $.ajax({
+                method: "POST",
+                url: "/api/get_todos/", 
+                dataType: "json",
+                data: JSON.stringify({
+                    jwtoken: window.localStorage.getItem("token")
+                }),
+                contentType: "application/json",
+                success: function(data) {
+                    if(data == false) {
+                        window.location.href = "/login/index.html"
+                    } else {
+                        return;
+                    }
+                }
+            });
+        } else {
+            window.location.href = "/login/index.html"
+        }
+
+        function addTodo() {
+            var con = document.getElementById("todo").value;
+            $.ajax({
+                method: "PUT",
+                url: "/api/add_todo/", 
+                dataType: "json",
+                data: JSON.stringify({
+                    content: con,
+                    jwtoken: localStorage.getItem("token")
+                }),
+                contentType: "application/json",
+                success: function(data) {
+                    if(data == false) {
+                        window.location.href = "/login/index.html"
+                    } else {
+                        return;
+                    }
+                }
+            });
+        }
+</script>
+</head>
+<body>
+    <div class="container">
+        <div class="list">
+            <h2>Deine Todos</h2>
+            <input type="text" id="todoinput" id="todo" placeholder="Type your Todo in here." required>
+            <i class="fa fa-plus" aria-hidden="true" onclick="addTodo();"></i>
+            <ul>
+                <li>
+                    <label>
+                        <input type="checkbox" name="finish" id="finish">
+                        <p>Sus</p>
+                        <span></span>
+                    </label>
+                </li>
+                <li>
+                    <label>
+                        <input type="checkbox" name="finish" id="finish">
+                        <p>Geschirr spülen</p>
+                        <span></span>
+                    </label>
+                </li>
+                
+            </ul>
+        </div>
+    </div>
+
+</body>
+</html>
