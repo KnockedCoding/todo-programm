@@ -6,22 +6,16 @@
     font-family: "Poppins", sans-serif;
 }
 body {
-    margin: 0;
-    padding: 0;
-    background: linear-gradient(154deg,#df9629, #a10f0f);
-    height: 100vh;
-    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: url("background.jpg");
 }
 .center {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 345px;
-    height: 300px;
-    background: #202020;
-    border-radius: 10px;
-    box-shadow: 10px 10px 15px rgba(0,0,0,0.05);
+    position: relative;
+    background: #fff;
+    width: 350px;
 }
 .center h1 {
     text-align: center;
