@@ -1,7 +1,6 @@
 from fastapi import FastAPI
 from starlette.responses import RedirectResponse
 from fastapi.staticfiles import StaticFiles
-import uvicorn
 import jwt
 
 from Cursor import Cursor
@@ -98,5 +97,3 @@ async def _root():
 
 
 app.mount("/", StaticFiles(directory="www"), name="www")
-
-uvicorn.run(app, host="0.0.0.0", port=8801)
