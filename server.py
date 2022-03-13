@@ -97,3 +97,5 @@ async def _root():
 
 
 app.mount("/", StaticFiles(directory="www"), name="www")
+
+api.create_tables()
