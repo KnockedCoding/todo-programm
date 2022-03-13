@@ -1,1 +1,1 @@
-web: uvicorn hello:app --log-file
+web: uvicorn hello:app --log-file=-
