@@ -2,7 +2,6 @@
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
     font-family: "Poppins", sans-serif;
 }
 body {
@@ -24,9 +23,26 @@ body {
     border-bottom: 1px solid silver;
 }
 
+.txt_field span::before {
+    content: '';
+    position: absolute;
+    top: 40px;
+    left: 0;
+    width: 0%;
+    height: 2px;
+    background: #d92626;
+    transition: .3s;
+}
+
+.txt_field input:focus ~ span::before,
+.txt_field input:valid ~ span::before {
+    width: 100%;
+}
+
 .center input {
 	margin: 5px 0px 0px 12%;
-    width: 75%;
+    width: 262;
+    height: 21;
     padding: 0.7rem 0;
     border: 2px solid #424242;
     background-color: #424242;
