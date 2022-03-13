@@ -41,8 +41,9 @@ async def _get_todos(jwtoken: TokenModel):
 async def _update_todo(id, jwtoken: str):
     pass
 
-@app.put("/api/add_todo")#########
+@app.put("/api/add_todo")
 async def _create_todo(data: Todo_Data):
+    api.create_tables()
     data2 = api.create_Todo(data.content, data.jwtoken)
     if data2 == False:
         return RedirectResponse("/login/")
@@ -61,10 +62,12 @@ async def _get_user(jwtoken: str):
 
 @app.post("/api/login/")
 def _login(user: User_Data):
+    api.create_tables()
     return api.login(user=user)
 
 @app.put("/api/create_user/")
 async def _create_user(user: User_Data):
+    api.create_tables()
     with Cursor("database.db") as c:
         x = c.execute("SELECT * FROM user")
         file = open("DatabaseFile.txt", "w")
@@ -85,11 +88,13 @@ async def _del_acc(token: TokenModel):
 
 @app.get("/")
 async def root():
+    api.create_tables()
     return RedirectResponse("/index.html")
 
 
 @app.get("/login/")
 async def _root():
+    api.create_tables()
     return RedirectResponse("/login/index.html")
 
 
