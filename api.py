@@ -1,10 +1,7 @@
-from nntplib import NNTPPermanentError
-from tkinter.messagebox import RETRY
 import jwt
 from argon2.exceptions import VerifyMismatchError
 from pydantic import BaseModel
 from argon2 import PasswordHasher
-import base64
 
 from Cursor import Cursor
 
