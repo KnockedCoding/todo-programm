@@ -1,10 +1,79 @@
 {
-    "name": "Todospro",
-    "short_name": "Todo",
-    "theme_color": "#0047ff",
-    "background_color": "#2196f3",
-    "display": "fullscreen",
-    "orientation": "portrait",
-    "scope": "/",
-    "start_url": "/"
+	"short_name": "Todos Pro",
+	"name": "Todos Pro",
+	"lang": "en",
+	"description": "A litte Todo app",
+	"background_color": "#00aae7",
+	"theme_color": "#00aae7",
+	"dir": "ltr",
+	"display": "standalone",
+	"orientation": "portrait",
+	"icons": [
+		{
+			"src": "/assets/img/android-icon-192x192-seochecker-manifest-413.png",
+			"type": "image/png",
+			"sizes": "192x192"
+		},
+		{
+			"src": "/assets/img/apple-icon-180x180-seochecker-manifest-413.png",
+			"type": "image/png",
+			"sizes": "180x180"
+		},
+		{
+			"src": "/assets/img/apple-icon-152x152-seochecker-manifest-413.png",
+			"type": "image/png",
+			"sizes": "152x152"
+		},
+		{
+			"src": "/assets/img/apple-icon-144x144-seochecker-manifest-413.png",
+			"type": "image/png",
+			"sizes": "144x144"
+		},
+		{
+			"src": "/assets/img/apple-icon-120x120-seochecker-manifest-413.png",
+			"type": "image/png",
+			"sizes": "120x120"
+		},
+		{
+			"src": "/assets/img/apple-icon-114x114-seochecker-manifest-413.png",
+			"type": "image/png",
+			"sizes": "114x114"
+		},
+		{
+			"src": "/assets/img/favicon-96x96-seochecker-manifest-413.png",
+			"type": "image/png",
+			"sizes": "96x96"
+		},
+		{
+			"src": "/assets/img/apple-icon-76x76-seochecker-manifest-413.png",
+			"type": "image/png",
+			"sizes": "76x76"
+		},
+		{
+			"src": "/assets/img/apple-icon-72x72-seochecker-manifest-413.png",
+			"type": "image/png",
+			"sizes": "72x72"
+		},
+		{
+			"src": "/assets/img/apple-icon-60x60-seochecker-manifest-413.png",
+			"type": "image/png",
+			"sizes": "60x60"
+		},
+		{
+			"src": "/assets/img/apple-icon-57x57-seochecker-manifest-413.png",
+			"type": "image/png",
+			"sizes": "57x57"
+		},
+		{
+			"src": "/assets/img/favicon-32x32-seochecker-manifest-413.png",
+			"type": "image/png",
+			"sizes": "32x32"
+		},
+		{
+			"src": "/assets/img/favicon-16x16-seochecker-manifest-413.png",
+			"type": "image/png",
+			"sizes": "16x16"
+		}
+	],
+	"prefer_related_applications": false
 }

@@ -16,13 +16,14 @@
     <div class="container" id="cont">
     </div>
     <div class="center">
-        <input type="text" id="username" required placeholder="Your Username">
-        <input type="password" id="password" required placeholder="Your Password">
-        <div class="signup_link">
-            Not a member? <a href="#">Signup</a>
-            </div>
-        <button type="button" class="btn" onclick="login();">Login</button>
-            
+        <form method="post">
+            <input type="text" id="username" required placeholder="Your Username">
+            <input type="password" id="password" required placeholder="Your Password">
+            <div class="signup_link">
+                Not a member? <a href="#">Signup</a>
+                </div>
+            <button type="button" class="btn" onclick="login();">Login</button>
+        </form>
     </div>
     <script>
         if(localStorage.getItem("token")) {
