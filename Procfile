@@ -1,0 +1,1 @@
+web: uvicorn hello:app --log-file
