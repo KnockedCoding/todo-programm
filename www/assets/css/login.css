@@ -16,6 +16,7 @@ body {
     position: relative;
     background: #fff;
     width: 350px;
+    height: 250px;
 }
 .center h1 {
     text-align: center;
