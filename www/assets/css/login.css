@@ -6,9 +6,11 @@
     font-family: "Poppins", sans-serif;
 }
 body {
-    display: flex;
+    display: block;
     justify-content: center;
     align-items: center;
+    padding-top: 250px;
+    padding-left: 30px;
     min-height: 100vh;
     background: url("background.jpg");
 }
@@ -18,9 +20,12 @@ body {
     width: 350px;
     height: 320px;
 }
- h2 {
-    padding-left: 140px;
-    
+
+
+.text {
+    justify-content: center;
+    padding-bottom: 450px;
+    padding-left: 50px;
 }
 
 

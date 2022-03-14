@@ -11,12 +11,17 @@ body {
     min-height: 100vh;
     background: url("background.jpg");
 }
+
+h2 {
+    
+}
 .center {
     position: relative;
     background: #424242;
     width: 350px;
     height: 400px;
 }
+
 .center h1 {
     text-align: center;
     padding: 20px 0;
