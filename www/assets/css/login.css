@@ -15,10 +15,26 @@ body {
     background: url("background.jpg");
 }
 .center {
-    position: relative;
+    position: fixed;
     background: #424242;
     width: 350px;
     height: 320px;
+}
+
+.forum h1 {
+    padding-left: 0px;
+    padding-right: 25px;
+    transform: translate(-0%, -100%);
+    color: #00e1ff;
+    text-align: center;
+    font-size: 40px;
+}
+
+.center h2 {
+    padding-left: 130px;
+    background: linear-gradient(145deg, rgb(19, 188, 255), rgb(0, 255, 34));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 
@@ -91,10 +107,10 @@ form .txt {
 
 .btn {
     background: none;
-    color: #ccc;
+    color: rgb(255, 255, 255);
     width: 150px;
     height: 50px;
-    border: 1px solid #ff4800;
+    border: 1px solid #00e1ff;
     font-size: 18px;
     border-radius: 4px;
     transition: .6s;
@@ -134,7 +150,8 @@ form .txt {
 }
 
 .btn:hover {
-    background: linear-gradient(154deg,#df9629, #a10f0f);
+    background: linear-gradient(145deg, rgb(19, 188, 255), rgb(0, 255, 34));
+    border: 2px solid #ffffff;
     cursor: pointer;
 }
 

@@ -15,19 +15,23 @@
 <body>
     <div class="container" id="cont">
     </div>
-    <div class="center">
-        <h2>Login</h2>
-        <form method="post">
-            <input type="text" class="txt" id="username" required placeholder="Your Username">
-            <span></span>
-            <input type="password" class="txt" id="password" required placeholder="Your Password">
-            <span></span>
-            <div class="signup_link">
-                Not a member? <a href="#">Signup</a>
-                </div>
-            <button type="button" class="btn" onclick="login();">Login</button>
-        </form>
+    <div class="forum">
+        <h1>STAY ORGANIZED</h1>
+        <div class="center">
+            <h2>Login</h2>
+            <form method="post">
+                <input type="text" class="txt" id="username" required placeholder="Your Username">
+                <span></span>
+                <input type="password" class="txt" id="password" required placeholder="Your Password">
+                <span></span>
+                <div class="signup_link">
+                    Not a member? <a href="#">Signup</a>
+                    </div>
+                <button type="button" class="btn" onclick="login();">Login</button>
+            </form>
+        </div>
     </div>
+    
     <script>
         if(localStorage.getItem("token")) {
             window.location.href = "/";
