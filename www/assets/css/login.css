@@ -24,8 +24,8 @@ body {
 
 
 .forum {
-    position: absolute;
-    margin-right: 50%;
+    position: relative;
+    margin-right: 10px;
 }  
 .forum h1 {
     padding-left: 0px;
