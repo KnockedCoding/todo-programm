@@ -15,13 +15,18 @@ body {
     background: url("background.jpg");
 }
 .center {
-    position: block;
+    position: absolute;
     background: #424242;
     padding-right: 50px;
     width: 350px;
     height: 320px;
 }
 
+
+.forum {
+    position: absolute;
+    margin-right: 50%;
+}  
 .forum h1 {
     padding-left: 0px;
     padding-right: 25px;
