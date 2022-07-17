@@ -5,7 +5,7 @@ from argon2 import PasswordHasher
 
 from Cursor import Cursor
 
-key = "5ffjucus0nk;12&7z47ddhcctaa.ixsn6d87;l5o"
+key = "sus"
 
 ph = PasswordHasher()
 
